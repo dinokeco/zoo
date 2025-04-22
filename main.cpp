@@ -1,14 +1,18 @@
 #include <iostream>
-#include "Animal.h"
+
+#include "ZooDynamic.h"
+#include "Bird.h"
+#include "Mammal.h"
 
 int main() {
     // Create an instance of the Animal class
-    Animal myAnimal("Fluffy", "2020-05-15", "Cat");
 
-    // Print out all attributes
-    std::cout << "Name: " << myAnimal.getName() << std::endl;
-    std::cout << "Birth Date: " << myAnimal.getBirthDate() << std::endl;
-    std::cout << "Species: " << myAnimal.getSpecies() << std::endl;
+    ZooDynamic zoo = ZooDynamic();
 
+    zoo.addAnimal({"Bird1", "2025-04-21", "Bird", "Forest"});
+    zoo.addAnimal(Mammal("Mammal1", "2025-04-21", "Mammal", "Forest"));
+    zoo.addAnimal(Bird("Bird2", "2025-04-21", "Bird", "Forest"));
+
+    std::cout << zoo[0] << std::endl;
     return 0;
 }
